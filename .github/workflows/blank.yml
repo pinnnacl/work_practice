@@ -30,5 +30,13 @@ jobs:
       - name: Terraform validate
         run : terraform validate
 
+      - name: Terraform plan
+        id: plan
+        run : terraform plan
+
+      - name: Terraform plan status
+        if: steps.plan.outcome == 'failure'
+        run: exit 1
+
       
 
