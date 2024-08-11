@@ -17,8 +17,7 @@ jobs:
   terraform:
     name: New IaC Changes
     runs-on: ubuntu-latest
-    working-directory: terraform
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -33,10 +32,12 @@ jobs:
         run : terraform validate
 
       - name: Terraform plan
+        working-directory: terraform
         id: plan
         run : terraform plan
 
       - name: Terraform plan status
+        working-directory: terraform
         if: steps.plan.outcome == 'failure'
         run: exit 1
 
