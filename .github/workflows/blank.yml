@@ -17,6 +17,8 @@ jobs:
   terraform:
     name: New IaC Changes
     runs-on: ubuntu-latest
+    working-directory: terraform
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
