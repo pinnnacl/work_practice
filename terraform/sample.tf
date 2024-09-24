@@ -17,6 +17,7 @@ resource "aws_instance" "toto" {
   security_groups = ["SG-Jenkins"]
   key_name        = "my"
 }
+
 data "aws_vpc" "default" {
   default = true
 }
