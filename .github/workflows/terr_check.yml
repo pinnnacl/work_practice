@@ -3,7 +3,7 @@ name: "Terraform-infra"
 on:
   push:
     branches:
-      - feature
+      - feature_branch
       - main
   workflow_dispatch:
   
